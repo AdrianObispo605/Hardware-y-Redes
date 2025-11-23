@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partes del Computador - Actividad Educativa</title>
+<title>Partes del Computador - Actividad Interactiva</title>
 
 <style>
 /* ======== ESTILOS GENERALES ======== */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f8ff;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #e6ecff, #f9fbff);
   margin: 0;
   padding: 0;
   color: #333;
@@ -22,11 +22,11 @@ body {
 /* Contenedor principal */
 .container {
   background: white;
-  width: 90%;
-  max-width: 600px;
-  padding: 20px 30px;
+  width: 95%;
+  max-width: 900px;
+  padding: 25px 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Encabezados */
@@ -44,10 +44,51 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 button:hover {
   background-color: #1f37b5;
+}
+
+/* ======== SECCIÓN DE TARJETAS ======== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #f0f4ff;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+.card p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Input nombre */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
 /* Preguntas */
@@ -93,28 +134,63 @@ button:hover {
 <body>
 <div class="container" id="app">
 
-  <!-- ======== SECCIÓN INICIAL (EXPLICACIÓN Y REGISTRO) ======== -->
+  <!-- ======== SECCIÓN INICIAL ======== -->
   <div id="intro">
-    <h1>Las Partes del Computador</h1>
-    <p>Antes de comenzar, repasemos las partes más importantes del computador:</p>
-    <ul>
-      <li><b>CPU (Unidad Central de Procesamiento):</b> Es el cerebro del computador, donde se ejecutan los programas.</li>
-      <li><b>Monitor:</b> Muestra la información visual al usuario.</li>
-      <li><b>Teclado:</b> Permite ingresar texto y comandos.</li>
-      <li><b>Ratón o Mouse:</b> Dispositivo apuntador para interactuar con la interfaz gráfica.</li>
-      <li><b>Memoria RAM:</b> Almacena temporalmente los datos que el CPU necesita procesar rápidamente.</li>
-      <li><b>Disco Duro:</b> Guarda los archivos y programas de forma permanente.</li>
-      <li><b>Tarjeta Madre:</b> Conecta y comunica todos los componentes del sistema.</li>
-      <li><b>Fuente de Poder:</b> Suministra la energía eléctrica al computador.</li>
-    </ul>
-    <p>Ahora, escribe tu nombre para iniciar el cuestionario:</p>
-    <input type="text" id="nombre" placeholder="Tu nombre" style="width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;">
+    <h1>💻 Las Partes del Computador</h1>
+    <p style="text-align:center;">Observa los componentes principales del computador y aprende sus funciones:</p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3305/3305682.png" alt="CPU">
+        <h4>CPU</h4>
+        <p>El cerebro del computador. Procesa toda la información.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2282/2282173.png" alt="Monitor">
+        <h4>Monitor</h4>
+        <p>Muestra la información en forma visual.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/158/158743.png" alt="Teclado">
+        <h4>Teclado</h4>
+        <p>Permite ingresar texto y comandos al sistema.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/158/158746.png" alt="Ratón">
+        <h4>Ratón</h4>
+        <p>Sirve para apuntar, seleccionar y hacer clic en objetos.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1839/1839347.png" alt="RAM">
+        <h4>Memoria RAM</h4>
+        <p>Guarda datos temporalmente mientras el equipo funciona.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2743/2743093.png" alt="Disco Duro">
+        <h4>Disco Duro</h4>
+        <p>Almacena información y programas de forma permanente.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="Tarjeta Madre">
+        <h4>Tarjeta Madre</h4>
+        <p>Conecta y coordina todos los componentes internos.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712033.png" alt="Fuente de Poder">
+        <h4>Fuente de Poder</h4>
+        <p>Distribuye la energía necesaria a cada componente.</p>
+      </div>
+    </div>
+
+    <br>
+    <p>Ahora escribe tu nombre para comenzar:</p>
+    <input type="text" id="nombre" placeholder="Tu nombre">
     <button id="startBtn">Iniciar Cuestionario</button>
   </div>
 
   <!-- ======== SECCIÓN DE CUESTIONARIO ======== -->
   <div id="quiz" style="display:none;">
-    <h2>Cuestionario: Partes del Computador</h2>
+    <h2>🧩 Cuestionario: Partes del Computador</h2>
     <form id="quizForm"></form>
     <button id="submitBtn">Finalizar</button>
   </div>
@@ -159,10 +235,9 @@ const submitBtn = document.getElementById('submitBtn');
 const scoreDisplay = document.getElementById('score');
 const messageDisplay = document.getElementById('message');
 
-/* ======== VARIABLES ======== */
 let selectedQuestions = [];
 
-/* ======== FUNCIÓN PARA INICIAR ======== */
+/* ======== INICIO DEL CUESTIONARIO ======== */
 startBtn.addEventListener('click', () => {
   const nombre = document.getElementById('nombre').value.trim();
   if (nombre === "") {
@@ -181,7 +256,7 @@ function iniciarCuestionario() {
   mostrarPreguntas();
 }
 
-/* ======== FUNCIÓN PARA MOSTRAR PREGUNTAS ======== */
+/* ======== MOSTRAR PREGUNTAS ======== */
 function mostrarPreguntas() {
   quizForm.innerHTML = "";
   selectedQuestions.forEach((item, index) => {
@@ -200,7 +275,7 @@ function mostrarPreguntas() {
   });
 }
 
-/* ======== FUNCIÓN PARA CALCULAR RESULTADOS ======== */
+/* ======== EVALUAR RESULTADOS ======== */
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   let correct = 0;
@@ -215,11 +290,10 @@ submitBtn.addEventListener('click', (e) => {
   result.style.display = "block";
   scoreDisplay.innerText = `Respuestas correctas: ${correct} / 10\nRespuestas incorrectas: ${incorrect}`;
   
-  // Mensaje motivador
-  if (correct === 10) messageDisplay.innerText = "¡Excelente! Eres un experto en las partes del computador.";
-  else if (correct >= 7) messageDisplay.innerText = "¡Muy bien! Estás dominando este tema.";
-  else if (correct >= 4) messageDisplay.innerText = "Buen intento, repasa un poco más y lo lograrás.";
-  else messageDisplay.innerText = "No te preocupes, vuelve a repasar y mejora tu resultado.";
+  if (correct === 10) messageDisplay.innerText = "🌟 ¡Excelente! Eres un experto en las partes del computador.";
+  else if (correct >= 7) messageDisplay.innerText = "🎯 ¡Muy bien! Estás dominando este tema.";
+  else if (correct >= 4) messageDisplay.innerText = "📘 Buen intento, repasa un poco más y lo lograrás.";
+  else messageDisplay.innerText = "💡 No te preocupes, vuelve a repasar y mejora tu resultado.";
 });
 </script>
 </body>
